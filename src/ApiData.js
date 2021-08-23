@@ -11,7 +11,7 @@ class ApiData extends Component {
                             <Card.Title>{obj.strDrink}</Card.Title>
                             <Card.Img variant="top" src={obj.strDrinkThumb} alt="" />
                             <Card.Text>{obj.idDrink}</Card.Text>
-                            <Button variant="success">ADD TO FAVORITE </Button>
+                            <Button variant="success"onClick={e => this.props.favoriteItem(obj)}>ADD TO FAVORITE </Button>
                         </Card>
                     </div>
                 )

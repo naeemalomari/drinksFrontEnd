@@ -10,8 +10,8 @@ import {
 import { withAuth0 } from '@auth0/auth0-react';
 import Profile from './Profile';
 import Main from './Main';
+import Favorite from './Favorite';
 class App extends React.Component {
-
   render() {
     return (
       <>
@@ -26,7 +26,7 @@ class App extends React.Component {
                 <Profile />
               </Route>
               <Route exact path='/favorite'>
-                {/* <Favorite /> */}
+                <Favorite />
               </Route>
             </Switch>
             <Footer />

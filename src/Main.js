@@ -13,22 +13,28 @@ class Main extends Component {
     }
     componentDidMount = async () => {
         const request = await axios
-        .get(`http://localhost:6000/drink`)
+            .get(`http://localhost:3050/drink`)
+        // console.log(request)
         this.setState({
             apiData: request.data,
             showDataComponent: true
         })
     }
-
+    favoriteItem = async (obj) => {
+        console.log(obj);
+        await axios.post(`http://localhost:3050/drink/favorite`, obj);
+ 
+    }
     render() {
         return (
             <>
-                
-                   
+                {
+                    this.state.showDataComponent &&
                     <ApiData
                         apiData={this.state.apiData}
+                        favoriteItem={this.favoriteItem}
                     />
-                
+                }
             </>
         )
     }
